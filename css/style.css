@@ -1,0 +1,27 @@
+/* Fonts */
+/* ============================*/
+@font-face {
+  font-family: TheGirlNextDoor;
+  src: url('../fonts/thegirlnextdoor.ttf');
+}
+
+body {
+  font-family: TheGirlNextDoor;
+}
+
+#container {
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 100px 0;
+  margin: 20px 0;
+}
+
+.card .english {
+  display: none;
+}
