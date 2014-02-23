@@ -20,6 +20,7 @@ $(document).ready(function(){
 		}
 	    }, 300000);
 	    showTranslation();
+	    displayRandomCard();
 	    pauseDisplay();
 	    newCard();
 	})
