@@ -54,6 +54,9 @@ $(document).ready(function(){
     }
 
     function updateFaviconProgress(){
+	window.onblur = function() {
+	    Piecon.setProgress(0);
+	}
 	window.onfocus = function() {
 	    Piecon.setProgress(0);
 	}
