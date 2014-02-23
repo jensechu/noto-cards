@@ -3,7 +3,7 @@ $(document).ready(function(){
     play = true;
 
     function loadCards() {
-        $.getJSON('/js/cards.json', function(data) {
+        $.getJSON('js/cards.json', function(data) {
             var items = [];
             $.each( data.cards, function( i, val ) {
                 items.push( 
@@ -18,7 +18,7 @@ $(document).ready(function(){
 		if( play ) { 
 		    displayRandomCard()
 		}
-	    }, 1000);
+	    }, 300000);
 	    showTranslation();
 	    pauseDisplay();
 	    newCard();
