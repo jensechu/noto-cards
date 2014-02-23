@@ -3,7 +3,7 @@
 
 ## Summary
 #### [Live Version](http://jensechu.github.com/noto-cards)
-This web app serves to help me learn Japanese! It loads a random Japanese sentence every five minutes with the goal of subtle eposure/challenge throughout my day. It works on mobile! :iphone:
+This web app serves to help me learn Japanese! It loads a random Japanese sentence every five minutes with the goal of subtle exposure/challenge throughout my day. It works on mobile! :iphone:
 
 The user can toggle the English translation by clicking on the Japanese sentence. Also the five minute timer can be paused by clicking on the 'Stop' button, and manually changed by clicking the 'Heart' icon.
 
