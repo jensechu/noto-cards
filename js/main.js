@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    play = true;
+
     function loadCards() {
         $.getJSON('/js/cards.json', function(data) {
             var items = [];
@@ -11,9 +13,14 @@ $(document).ready(function(){
             $(templateItems).appendTo( "#container" );
             
         })
-	.done(function() { 
-	    setInterval( function(){ displayRandomCard(); }, 10000 );
+	.done(function() { 	    
+	    setInterval( function(){ 
+		if( play ) { 
+		    displayRandomCard()
+		}
+	    }, 1000);
 	    showTranslation();
+	    pauseDisplay();
 	    newCard();
 	})
         return false;
@@ -25,11 +32,18 @@ $(document).ready(function(){
 	});
     }
 
+    function pauseDisplay() {
+	$('.pause').on('click', function(){
+	    play = !(play);
+	});
+    }
+
     function displayRandomCard(){
 	cards = $('.card');
 	english = $('.card .english');
 	displayCard = Math.floor( Math.random() * cards.length )
-	
+
+	console.log('In loop', play);
 	$(cards).addClass('is-hidden');
 	$(english).addClass('is-hidden');
 	$(cards[displayCard]).removeClass('is-hidden');
@@ -40,7 +54,5 @@ $(document).ready(function(){
 	    displayRandomCard();
 	});
     }
-
-    loadCards();
 
 });
