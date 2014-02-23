@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     play = true;
+    TIME = 300000;
 
     function loadCards() {
         $.getJSON('js/cards.json', function(data) {
@@ -18,11 +19,12 @@ $(document).ready(function(){
 		if( play ) { 
 		    displayRandomCard()
 		}
-	    }, 300000);
+	    }, TIME);
 	    showTranslation();
 	    displayRandomCard();
 	    pauseDisplay();
 	    newCard();
+	    updateFaviconProgress();
 	})
         return false;
     }
@@ -45,16 +47,29 @@ $(document).ready(function(){
 	english = $('.card .english');
 	displayCard = Math.floor( Math.random() * cards.length )
 
+	Piecon.setProgress(100);
 	$(cards).addClass('is-hidden');
 	$(english).addClass('is-hidden');
 	$(cards[displayCard]).removeClass('is-hidden');
     }
 
+    function updateFaviconProgress(){
+	window.onfocus = function() {
+	    Piecon.setProgress(0);
+	}
+    }
+    
     function newCard(){
 	$('.toggle').on('click', function(){
 	    displayRandomCard();
 	});
     }
+
+    Piecon.setOptions({
+	color: '#F18ACC',
+	background: '#FCCEF6',
+	shadow: '#fff'
+    });
 
     loadCards();
 });
