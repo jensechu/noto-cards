@@ -14,7 +14,7 @@ $(document).ready(function(){
             
         })
 	.done(function() { 	    
-	    setInterval( function(){ 
+	    setInterval( function(){
 		if( play ) { 
 		    displayRandomCard()
 		}
@@ -35,6 +35,7 @@ $(document).ready(function(){
     function pauseDisplay() {
 	$('.pause').on('click', function(){
 	    play = !(play);
+	    $(this).toggleClass('paused');
 	});
     }
 
@@ -43,7 +44,6 @@ $(document).ready(function(){
 	english = $('.card .english');
 	displayCard = Math.floor( Math.random() * cards.length )
 
-	console.log('In loop', play);
 	$(cards).addClass('is-hidden');
 	$(english).addClass('is-hidden');
 	$(cards[displayCard]).removeClass('is-hidden');
@@ -55,4 +55,5 @@ $(document).ready(function(){
 	});
     }
 
+    loadCards();
 });

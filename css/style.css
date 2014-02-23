@@ -7,6 +7,9 @@
 
 body {
   font-family: TheGirlNextDoor;
+  color: rgb(51, 51, 51);
+  margin: 0;
+  padding: 0;
 }
 
 #container {
@@ -16,15 +19,36 @@ body {
 .toggle {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 5px;
+    font-size: 20px;
+    line-height: 20px;
+    color: rgb(241, 138, 204);
+}
+
+.pause {
+    padding: 8px 0 0 5px;
+    line-height: 25px;
+    font-size: 25px;
+    color: rgb(241, 138, 204);
+    border-bottom: 1px solid rgb(241, 138, 204);
+    background-color: rgba(241, 138, 204, 0.2);
+}
+
+.pause:before {
+    content: '\25A3';
+}
+
+.pause.paused:before {
+    content: '\25B6';
+    line-height: 16px;
+    font-size: 20px;
 }
 
 .card {
   width: 100%;
   text-align: center;
   box-sizing: border-box;
-  padding: 20px 0;
-  margin: 20px 0;
+  padding: 0 10px;
 }
 
 .card h1 {
