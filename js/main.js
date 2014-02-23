@@ -67,7 +67,7 @@ $(document).ready(function(){
 
     Piecon.setOptions({
 	color: '#F18ACC',
-	background: '#FCCEF6',
+	background: '#FCDCF2',
 	shadow: '#fff'
     });
 
