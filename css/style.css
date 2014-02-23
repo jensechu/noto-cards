@@ -16,22 +16,24 @@ body {
   width: 100%;
 }
 
+#controls {
+    padding: 5px 8px;
+    border-bottom: 1px solid rgb(241, 138, 204);
+    background-color: rgba(241, 138, 204, 0.2);
+    height: 35px;
+    line-height: 40px;
+}
+
 .toggle {
-    position: absolute;
-    top: 10px;
-    right: 5px;
-    font-size: 20px;
-    line-height: 20px;
+    float: right;
+    font-size: 30px;
     color: rgb(241, 138, 204);
 }
 
 .pause {
-    padding: 8px 0 0 5px;
-    line-height: 25px;
-    font-size: 25px;
+    float: left;
+    font-size: 35px;
     color: rgb(241, 138, 204);
-    border-bottom: 1px solid rgb(241, 138, 204);
-    background-color: rgba(241, 138, 204, 0.2);
 }
 
 .pause:before {
@@ -40,8 +42,8 @@ body {
 
 .pause.paused:before {
     content: '\25B6';
-    line-height: 16px;
-    font-size: 20px;
+    line-height: 40px;
+    font-size: 30px;
 }
 
 .card {
