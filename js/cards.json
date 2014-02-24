@@ -37,6 +37,18 @@
     },
     {"english": "I am writing a letter now.", 
      "japanese": "いま　てがみを　かいています。"
+    },
+    {"english": "I want to eat tempura.", 
+     "japanese": "てんぷらが　たべたいです。"
+    },
+    {"english": "I wanted to eat tempura.", 
+     "japanese": "てんぷらを　たべたがっていました。"
+    },
+    {"english": "Please do not forget.", 
+     "japanese": "わすれないで　ください。"
+    },
+    {"english": "What do you do?", 
+     "japanese": "あなたな　らどうしますか。"
     }
 ]
 }
