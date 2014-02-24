@@ -7,6 +7,36 @@
     },
     {"english": "I will go to the market now.", 
      "japanese": "わたしは　いま　マーケットに　いきます。"
+    },
+    {"english": "This is a peach.", 
+     "japanese": "これは ももです。"
+    },
+    {"english": "This is not a peach.", 
+     "japanese": "これは ももでは ありません。"
+    },
+    {"english": "This is my book.", 
+     "japanese": "これはわたしの　ほんです。"
+    },
+    {"english": "I will go to Tokyo.", 
+     "japanese": "わたしは　とうきょうへ　いきます。"
+    },
+    {"english": "I bought a car.", 
+     "japanese": "わたしは　くるまを　かいました。"
+    },
+    {"english": "This is easy.", 
+     "japanese": "これは　やすいです。"
+    },
+    {"english": "This is tough.", 
+     "japanese": "これは　じょうぶです。"
+    },
+    {"english": "How much is this?", 
+     "japanese": "これは　いくらですか。"
+    },
+    {"english": "What is good?", 
+     "japanese": "なにが　いいですか。"
+    },
+    {"english": "I am writing a letter now.", 
+     "japanese": "いま　てがみを　かいています。"
     }
 ]
 }
