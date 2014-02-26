@@ -20,20 +20,21 @@ $(document).ready(function(){
 	    setInterval( function(){
 		if( play ) { displayRandomCard() }
 	    }, TIME);
+	    showTranslation();
 	    displayRandomCard();
 	    updateFaviconProgress();
+	    $('.selected').on('click', function(){ 
+		translate();
+	    });
+
 	})
         return false;
     }
 
-    function showTranslation() {
+    function translate() {
 	// Displays the opposite side of a card
 	$('.selected').find('.reverse').toggleClass('is-hidden');
     }
-
-    $('.selected').on('click', function(){ 
-	showTranslation();
-    });
 
     function pauseDisplay() {
 	// Pauses the 5min new card timer
@@ -95,8 +96,7 @@ $(document).ready(function(){
 	}
 	else if (code == 115) {
 	    // Keyboard shortcuts for 's'
-	    showTranslation();
-	    console.log('show translation');
+	    translate();
 	}
     }
 
