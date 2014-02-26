@@ -20,7 +20,6 @@ $(document).ready(function(){
 	    setInterval( function(){
 		if( play ) { displayRandomCard() }
 	    }, TIME);
-	    showTranslation();
 	    displayRandomCard();
 	    updateFaviconProgress();
 	    $('.selected').on('click', function(){ 
