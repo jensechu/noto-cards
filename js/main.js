@@ -21,6 +21,7 @@ $(document).ready(function(){
 		if( play ) { displayRandomCard() }
 	    }, TIME);
 	    displayRandomCard();
+	    updateFaviconProgress();
 	})
         return false;
     }
