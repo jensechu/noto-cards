@@ -1,14 +1,16 @@
 $(document).ready(function(){
 
     play = true;
+    currentDeck = 'sentence';
     TIME = 300000;
 
     function loadCards() {
+	// Load in the cards
         $.getJSON('js/cards.json', function(data) {
             var items = [];
             $.each( data.cards, function( i, val ) {
                 items.push( 
-                    "<div class='card is-hidden'><h1>" + data.cards[i].japanese + "</h1> <h1 class='english is-hidden'>" + data.cards[i].english + "</h1></div>" );
+                    "<div class='card is-hidden " + data.cards[i].type  + "'><h1>" + data.cards[i].back + "</h1> <h1 class='reverse is-hidden'>" + data.cards[i].front + "</h1></div>" );
             });
             templateItems = items.join( "" )
             $(templateItems).appendTo( "#container" );
@@ -16,44 +18,65 @@ $(document).ready(function(){
         })
 	.done(function() { 	    
 	    setInterval( function(){
-		if( play ) { 
-		    displayRandomCard()
-		}
+		if( play ) { displayRandomCard() }
 	    }, TIME);
-	    showTranslation();
 	    displayRandomCard();
-	    pauseDisplay();
-	    newCard();
-	    updateFaviconProgress();
 	})
         return false;
     }
 
     function showTranslation() {
-	$('.card').on('click', function(){
-	    $(this).find('.english').toggleClass('is-hidden');
-	});
+	// Displays the opposite side of a card
+	$('.selected').find('.reverse').toggleClass('is-hidden');
     }
+
+    $('.selected').on('click', function(){ 
+	showTranslation();
+    });
 
     function pauseDisplay() {
-	$('.pause').on('click', function(){
-	    play = !(play);
-	    $(this).toggleClass('paused');
-	});
+	// Pauses the 5min new card timer
+	play = !(play);
+	$('.pause').toggleClass('paused');
     }
+
+    $('.pause').on('click', function(){
+	pauseDisplay();
+    });
 
     function displayRandomCard(){
-	cards = $('.card');
-	english = $('.card .english');
-	displayCard = Math.floor( Math.random() * cards.length )
+	// Hide all cards
+	$('.card').removeClass('selected');
+	$('.card').addClass('is-hidden');
+	$('.reverse').addClass('is-hidden');
 
-	Piecon.setProgress(100);
-	$(cards).addClass('is-hidden');
-	$(english).addClass('is-hidden');
+	// Display a random card in the current deck
+	cards = $('.' + currentDeck + '');
+	displayCard = Math.floor( Math.random() * cards.length )
+	$(cards[displayCard]).addClass('selected');
 	$(cards[displayCard]).removeClass('is-hidden');
+
+	// Turn on the favicon notification
+	Piecon.setProgress(100);
     }
 
+    $('.toggle').on('click', function(){
+	displayRandomCard();
+    });
+
+    function selectDeck(){
+	// Choose deck of cards from dropdown
+	currentDeck = $('#cardSelection').val();
+	$('#cardSelection').toggleClass('kana-padding');
+	displayRandomCard();
+    }
+
+    $('#cardSelection').on('change', function(){
+	selectDeck();
+    });
+
     function updateFaviconProgress(){
+	// Turn off the favicon notification
 	window.onblur = function() {
 	    Piecon.setProgress(0);
 	}
@@ -62,12 +85,21 @@ $(document).ready(function(){
 	}
     }
     
-    function newCard(){
-	$('.toggle').on('click', function(){
+    document.onkeypress = function hotKeys(e){
+	var code = e.keyCode || e.which;
+
+	if (code == 119) {
+	    // Keyboard shortcuts for 'w'
 	    displayRandomCard();
-	});
+	}
+	else if (code == 115) {
+	    // Keyboard shortcuts for 's'
+	    showTranslation();
+	    console.log('show translation');
+	}
     }
 
+    // Options for notification display
     Piecon.setOptions({
 	color: '#F18ACC',
 	background: '#FCDCF2',

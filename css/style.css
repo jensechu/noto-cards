@@ -22,14 +22,12 @@ body {
     line-height: 40px;
 }
 
-.toggle {
-    float: right;
-    font-size: 30px;
-    color: rgb(241, 138, 204);
+#controls div {
+    width: 33%;
+    float: left;
 }
 
 .pause {
-    float: left;
     font-size: 35px;
     color: rgb(241, 138, 204);
 }
@@ -42,6 +40,29 @@ body {
     content: '\25B6';
     line-height: 40px;
     font-size: 30px;
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu select {
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: rgb(241, 138, 204);
+    outline: none;
+}
+
+.kana-padding {
+    padding-left: 70px;
+}
+
+.toggle {
+    font-size: 30px;
+    color: rgb(241, 138, 204);
+    text-align: right;
 }
 
 .card {

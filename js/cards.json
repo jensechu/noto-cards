@@ -1,54 +1,475 @@
 {"cards": [
-    {"english": "I want to eat sushi at eight o'clock.", 
-     "japanese": "はちじに　すしを　たべたい。"
+    {"front": "I want to eat sushi at eight o'clock.", 
+     "back": "はちじに　すしを　たべたい。",
+     "type": "sentence"
     },
-    {"english": "I will go to work by bike.", 
-     "japanese": "わたしは　じてんしゃで　しごとに　いきます。"
+    {"front": "I will go to work by bike.", 
+     "back": "わたしは　じてんしゃで　しごとに　いきます。",
+     "type": "sentence"
     },
-    {"english": "I will go to the market now.", 
-     "japanese": "わたしは　いま　マーケットに　いきます。"
+    {"front": "I will go to the market now.", 
+     "back": "わたしは　いま　マーケットに　いきます。",
+     "type": "sentence"
     },
-    {"english": "This is a peach.", 
-     "japanese": "これは ももです。"
+    {"front": "This is a peach.", 
+     "back": "これは ももです。",
+     "type": "sentence"
     },
-    {"english": "This is not a peach.", 
-     "japanese": "これは ももでは ありません。"
+    {"front": "This is not a peach.", 
+     "back": "これは ももでは ありません。",
+     "type": "sentence"
     },
-    {"english": "This is my book.", 
-     "japanese": "これはわたしの　ほんです。"
+    {"front": "This is my book.", 
+     "back": "これはわたしの　ほんです。",
+     "type": "sentence"
     },
-    {"english": "I will go to Tokyo.", 
-     "japanese": "わたしは　とうきょうへ　いきます。"
+    {"front": "I will go to Tokyo.", 
+     "back": "わたしは　とうきょうへ　いきます。",
+     "type": "sentence"
     },
-    {"english": "I bought a car.", 
-     "japanese": "わたしは　くるまを　かいました。"
+    {"front": "I bought a car.", 
+     "back": "わたしは　くるまを　かいました。",
+     "type": "sentence"
     },
-    {"english": "This is easy.", 
-     "japanese": "これは　やすいです。"
+    {"front": "This is easy.", 
+     "back": "これは　やすいです。",
+     "type": "sentence"
     },
-    {"english": "This is tough.", 
-     "japanese": "これは　じょうぶです。"
+    {"front": "This is tough.", 
+     "back": "これは　じょうぶです。",
+     "type": "sentence"
     },
-    {"english": "How much is this?", 
-     "japanese": "これは　いくらですか。"
+    {"front": "How much is this?", 
+     "back": "これは　いくらですか。",
+     "type": "sentence"
     },
-    {"english": "What is good?", 
-     "japanese": "なにが　いいですか。"
+    {"front": "What is good?", 
+     "back": "なにが　いいですか。",
+     "type": "sentence"
     },
-    {"english": "I am writing a letter now.", 
-     "japanese": "いま　てがみを　かいています。"
+    {"front": "I am writing a letter now.", 
+     "back": "いま　てがみを　かいています。",
+     "type": "sentence"
     },
-    {"english": "I want to eat tempura.", 
-     "japanese": "てんぷらが　たべたいです。"
+    {"front": "I want to eat tempura.", 
+     "back": "てんぷらが　たべたいです。",
+     "type": "sentence"
     },
-    {"english": "I wanted to eat tempura.", 
-     "japanese": "てんぷらを　たべたがっていました。"
+    {"front": "I wanted to eat tempura.", 
+     "back": "てんぷらを　たべたがっていました。",
+     "type": "sentence"
     },
-    {"english": "Please do not forget.", 
-     "japanese": "わすれないで　ください。"
+    {"front": "Please do not forget.", 
+     "back": "わすれないで　ください。",
+     "type": "sentence"
     },
-    {"english": "What do you do?", 
-     "japanese": "あなたな　らどうしますか。"
+    {"front": "What do you do?", 
+     "back": "あなたな　らどうしますか。",
+     "type": "sentence"
+    },
+    {"front": "あ",
+     "back": "ア",
+     "type": "kana"
+    },
+    {"front": "か",
+     "back": "カ",
+     "type": "kana"
+    },
+    {"front": "が",
+     "back": "ガ",
+     "type": "kana"
+    },
+    {"front": "さ",
+     "back": "サ",
+     "type": "kana"
+    },
+    {"front": "ざ",
+     "back": "ザ",
+     "type": "kana"
+    },
+    {"front": "た",
+     "back": "タ",
+     "type": "kana"
+    },
+    {"front": "だ",
+     "back": "ダ",
+     "type": "kana"
+    },
+    {"front": "な",
+     "back": "ナ",
+     "type": "kana"
+    },
+    {"front": "は",
+     "back": "ハ",
+     "type": "kana"
+    },
+    {"front": "ば",
+     "back": "バ",
+     "type": "kana"
+    },
+    {"front": "ま",
+     "back": "マ",
+     "type": "kana"
+    },
+    {"front": "や",
+     "back": "ヤ",
+     "type": "kana"
+    },
+    {"front": "ら",
+     "back": "ラ",
+     "type": "kana"
+    },
+    {"front": "わ",
+     "back": "ワ",
+     "type": "kana"
+    },
+    {"front": "い",
+     "back": "イ",
+     "type": "kana"
+    },
+    {"front": "き",
+     "back": "キ",
+     "type": "kana"
+    },
+    {"front": "ぎ",
+     "back": "ギ",
+     "type": "kana"
+    },
+    {"front": "し",
+     "back": "シ",
+     "type": "kana"
+    },
+    {"front": "じ",
+     "back": "ジ",
+     "type": "kana"
+    },
+    {"front": "ち",
+     "back": "チ",
+     "type": "kana"
+    },
+    {"front": "に",
+     "back": "ニ",
+     "type": "kana"
+    },
+    {"front": "ひ",
+     "back": "ヒ",
+     "type": "kana"
+    },
+    {"front": "び",
+     "back": "ビ",
+     "type": "kana"
+    },
+    {"front": "ぴ",
+     "back": "ピ",
+     "type": "kana"
+    },
+    {"front": "み",
+     "back": "ミ",
+     "type": "kana"
+    },
+    {"front": "り",
+     "back": "リ",
+     "type": "kana"
+    },
+    {"front": "う",
+     "back": "ウ",
+     "type": "kana"
+    },
+    {"front": "く",
+     "back": "ク",
+     "type": "kana"
+    },
+    {"front": "ぐ",
+     "back": "ヅ",
+     "type": "kana"
+    },
+    {"front": "す",
+     "back": "ス",
+     "type": "kana"
+    },
+    {"front": "ず",
+     "back": "ズ",
+     "type": "kana"
+    },
+    {"front": "つ",
+     "back": "ツ",
+     "type": "kana"
+    },
+    {"front": "ぬ",
+     "back": "ヌ",
+     "type": "kana"
+    },
+    {"front": "ふ",
+     "back": "フ",
+     "type": "kana"
+    },
+    {"front": "ぶ",
+     "back": "ブ",
+     "type": "kana"
+    },
+    {"front": "ぷ",
+     "back": "プ",
+     "type": "kana"
+    },
+    {"front": "む",
+     "back": "ム",
+     "type": "kana"
+    },
+    {"front": "ゆ",
+     "back": "ユ",
+     "type": "kana"
+    },
+    {"front": "る",
+     "back": "ル",
+     "type": "kana"
+    },
+    {"front": "を",
+     "back": "ヲ",
+     "type": "kana"
+    },
+    {"front": "え",
+     "back": "エ",
+     "type": "kana"
+    },
+    {"front": "け",
+     "back": "ケ",
+     "type": "kana"
+    },
+    {"front": "げ",
+     "back": "ゲ",
+     "type": "kana"
+    },
+    {"front": "せ",
+     "back": "セ",
+     "type": "kana"
+    },
+    {"front": "ぜ",
+     "back": "ゼ",
+     "type": "kana"
+    },
+    {"front": "て",
+     "back": "テ",
+     "type": "kana"
+    },
+    {"front": "で",
+     "back": "デ",
+     "type": "kana"
+    },
+    {"front": "ね",
+     "back": "ネ",
+     "type": "kana"
+    },
+    {"front": "へ",
+     "back": "ヘ",
+     "type": "kana"
+    },
+    {"front": "べ",
+     "back": "ベ",
+     "type": "kana"
+    },
+    {"front": "ぺ",
+     "back": "ペ",
+     "type": "kana"
+    },
+    {"front": "め",
+     "back": "メ",
+     "type": "kana"
+    },
+    {"front": "れ",
+     "back": "レ",
+     "type": "kana"
+    },
+    {"front": "お",
+     "back": "オ",
+     "type": "kana"
+    },
+    {"front": "こ",
+     "back": "コ",
+     "type": "kana"
+    },
+    {"front": "ご",
+     "back": "ゴ",
+     "type": "kana"
+    },
+    {"front": "そ",
+     "back": "ソ",
+     "type": "kana"
+    },
+    {"front": "ぞ",
+     "back": "ゾ",
+     "type": "kana"
+    },
+    {"front": "と",
+     "back": "ト",
+     "type": "kana"
+    },
+    {"front": "ど",
+     "back": "ド",
+     "type": "kana"
+    },
+    {"front": "の",
+     "back": "ノ",
+     "type": "kana"
+    },
+    {"front": "ほ",
+     "back": "ホ",
+     "type": "kana"
+    },
+    {"front": "ぼ",
+     "back": "ボ",
+     "type": "kana"
+    },
+    {"front": "ぽ",
+     "back": "ポ",
+     "type": "kana"
+    },
+    {"front": "も",
+     "back": "モ",
+     "type": "kana"
+    },
+    {"front": "よ",
+     "back": "ヨ",
+     "type": "kana"
+    },
+    {"front": "ろ",
+     "back": "ロ",
+     "type": "kana"
+    },
+    {"front": "ん",
+     "back": "ン",
+     "type": "kana"
+    },
+    {"front": "きゃ",
+     "back": "キャ",
+     "type": "kana"
+    },
+    {"front": "ぎゃ",
+     "back": "ギャ",
+     "type": "kana"
+    },
+    {"front": "しゃ",
+     "back": "シャ",
+     "type": "kana"
+    },
+    {"front": "じゃ",
+     "back": "ジャ",
+     "type": "kana"
+    },
+    {"front": "ちゃ",
+     "back": "チャ",
+     "type": "kana"
+    },
+    {"front": "にゃ",
+     "back": "ニャ",
+     "type": "kana"
+    },
+    {"front": "ひゃ",
+     "back": "ヒャ",
+     "type": "kana"
+    },
+    {"front": "びゃ",
+     "back": "ビャ",
+     "type": "kana"
+    },
+    {"front": "ぴゃ",
+     "back": "ピャ",
+     "type": "kana"
+    },
+    {"front": "みゃ",
+     "back": "ミャ",
+     "type": "kana"
+    },
+    {"front": "りゃ",
+     "back": "リャ",
+     "type": "kana"
+    },
+    {"front": "きゅ",
+     "back": "キュ",
+     "type": "kana"
+    },
+    {"front": "ぎゅ",
+     "back": "ギュ",
+     "type": "kana"
+    },
+    {"front": "しゅ",
+     "back": "シュ",
+     "type": "kana"
+    },
+    {"front": "じゅ",
+     "back": "ジュ",
+     "type": "kana"
+    },
+    {"front": "ちゅ",
+     "back": "チュ",
+     "type": "kana"
+    },
+    {"front": "にゅ",
+     "back": "ニュ",
+     "type": "kana"
+    },
+    {"front": "ひゅ",
+     "back": "ヒュ",
+     "type": "kana"
+    },
+    {"front": "びゅ",
+     "back": "ビュ",
+     "type": "kana"
+    },
+    {"front": "ぴゅ",
+     "back": "ピュ",
+     "type": "kana"
+    },
+    {"front": "みゅ",
+     "back": "ミュ",
+     "type": "kana"
+    },
+    {"front": "りゅ",
+     "back": "リュ",
+     "type": "kana"
+    },
+    {"front": "きょ",
+     "back": "キョ",
+     "type": "kana"
+    },
+    {"front": "ぎょ",
+     "back": "ギョ",
+     "type": "kana"
+    },
+    {"front": "しょ",
+     "back": "ショ",
+     "type": "kana"
+    },
+    {"front": "じょ",
+     "back": "ジョ",
+     "type": "kana"
+    },
+    {"front": "ちょ",
+     "back": "チョ",
+     "type": "kana"
+    },
+    {"front": "にょ",
+     "back": "ニョ",
+     "type": "kana"
+    },
+    {"front": "ひょ",
+     "back": "ヒョ",
+     "type": "kana"
+    },
+    {"front": "びょ",
+     "back": "ビョ",
+     "type": "kana"
+    },
+    {"front": "ぴょ",
+     "back": "ピョ",
+     "type": "kana"
+    },
+    {"front": "みょ",
+     "back": "ミョ",
+     "type": "kana"
+    },
+    {"front": "りょ",
+     "back": "リョ",
+     "type": "kana"
     }
 ]
 }
