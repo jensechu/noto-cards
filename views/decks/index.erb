@@ -1,0 +1,15 @@
+<ul>
+  <% @decks.each do |deck| %>
+  <li><%= deck.name %></li>
+    <ul>
+      <% @cards.each do |card| %>
+      <% if card.decks_id == deck.id %>
+      <li>
+      <%= card.front %>
+      </li>
+      <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+  </li>	
+</ul>
