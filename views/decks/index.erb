@@ -4,9 +4,14 @@
     <ul>
       <% @cards.each do |card| %>
       <% if card.decks_id == deck.id %>
-      <li>
-      <%= card.front %>
-      </li>
+      <div class="card" data-front="<%= card.front %>" data-back="<%= card.back %>" data-deck="<%= deck.name %>">
+	<div class="front">
+	  <%= card.front %>
+	</div>
+	<div class="back is-hidden">
+	  <%= card.back %>
+	</div>
+      </div>
       <% end %>
       <% end %>
     </ul>

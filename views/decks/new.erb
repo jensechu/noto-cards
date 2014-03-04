@@ -20,6 +20,6 @@
   <% if @newCard %>
   <%= @newCard.front %>
   <%= @newCard.back %>
-  <%= @decks[@newCard.decks_id].name %>
+  <%= @decks[@newCard.decks_id - 1].name %>
   <% end %>
 </form>   
