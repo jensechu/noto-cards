@@ -18,3 +18,14 @@ get "/" do
 
   erb :"decks/index"
 end
+
+get "/new" do
+  @card = Cards.new
+  erb :"decks/new"
+end
+
+post "/new" do
+  @card = Cards.new(params[:cards])
+  @card.save
+  erb :"decks/new"
+end
