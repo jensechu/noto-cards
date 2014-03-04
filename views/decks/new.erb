@@ -8,9 +8,18 @@
   <input id="back" name="cards[back]" type="text" value="<%= @card.back %>" />
   <br />
 
-  <label for="decks_id">Deck ID:</label><br />
-  <input id="decks_id" name="cards[decks_id]" type="text" value="<%= @card.decks_id.to_i %>" />
-  <br />
+  <label for="deck_id">Deck:</label><br />
+  <select id="cardSelection" name="cards[decks_id]" type="text">
+    <% @decks.each do |deck| %>
+    <option value="<%= deck.id.to_i %>"><%= deck.name %></option>
+    <% end %>
+  </select>
 
   <input type="submit" value="Create Card" />
+  
+  <% if @newCard %>
+  <%= @newCard.front %>
+  <%= @newCard.back %>
+  <%= @decks[@newCard.decks_id].name %>
+  <% end %>
 </form>   

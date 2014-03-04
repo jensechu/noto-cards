@@ -20,12 +20,20 @@ get "/" do
 end
 
 get "/new" do
+  numDecks = Deck.all.length
+  @decks = Deck.take(numDecks)
+
   @card = Cards.new
   erb :"decks/new"
 end
 
 post "/new" do
+  numDecks = Deck.all.length
+  @decks = Deck.take(numDecks)
+
   @card = Cards.new(params[:cards])
   @card.save
+
+  @newCard = Cards.last
   erb :"decks/new"
 end
