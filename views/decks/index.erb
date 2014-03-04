@@ -2,9 +2,10 @@
   <% @decks.each do |deck| %>
   <li><%= deck.name %></li>
     <ul>
-      <% @cards.each do |card| %>
+      <% @cards.each_with_index do |card, i| %>
       <% if card.decks_id == deck.id %>
-      <div class="card" data-front="<%= card.front %>" data-back="<%= card.back %>" data-deck="<%= deck.name %>">
+      <%= i %>
+      <div class="card" data-deck="<%= deck.name %>">
 	<div class="front">
 	  <%= card.front %>
 	</div>

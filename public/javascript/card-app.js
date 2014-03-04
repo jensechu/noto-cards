@@ -7,25 +7,24 @@ function Card (front, back, deck) {
 }
 
 $(document).ready(function(){
-    function Card ($elm) {
-	this.$elm = $elm;
-	this.$front = $elm.find('front');
-	this.$back = $elm.find('back');
-	this.deck = $elm.data('deck');
+    function Card ($card) {
+	this.$card = $card;
+	this.$front = $card.find('.front');
+	this.$back = $card.find('.back');
+	this.deck = $card.data('.deck');
 
-	this.flipCard = function($elm, $front, $back){
-	    $elm.on('click', function(){
-		// These log but aren't doing anything?
-		$front.addClass('is-hidden');
+	this.flipCard = function($card, $front, $back){
+	    $card.on('click', function(){
+		$front.toggleClass('is-hidden');
 		$back.toggleClass('is-hidden');
 	    });
 	}
 
-	this.flipCard(this.$elm, this.$front, this.$back);
+	this.flipCard(this.$card, this.$front, this.$back);
     }
 
     $('.card').each(function(){
-	$elm = $(this);
-	new Card($elm);
+	$card = $(this);
+	new Card($card);
     });
 });
