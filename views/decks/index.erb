@@ -1,21 +1,26 @@
-<ul>
-  <% @decks.each do |deck| %>
-  <li><%= deck.name %></li>
-    <ul>
-      <% @cards.each_with_index do |card, i| %>
-      <% if card.decks_id == deck.id %>
-      <%= i %>
-      <div class="card" data-deck="<%= deck.name %>">
-	<div class="front">
-	  <%= card.front %>
-	</div>
-	<div class="back is-hidden">
-	  <%= card.back %>
-	</div>
-      </div>
-      <% end %>
-      <% end %>
-    </ul>
+<div id="header">
+  <select class="deck-selector">
+    <% @decks_list.each do |deck, cards| %>
+    <option><%= deck.name %></option>
+    <% end %>
+    <select>
+</div>
+
+<% @decks_list.each_with_index do |(deck, cards), i| %>
+<div class="deck <%= 'current-deck' if i == 0 %>" data-deck="<%= deck.name %>">
+  <% cards.each_with_index do |card, i| %>
+  <div class="card <%= 'current-card' if i == 0 %>">
+
+    <div class='front'>
+      <%= card.front %>
+    </div>
+
+    <div class='back is-hidden'>
+      <%= card.back %>
+    </div>
+
+  </div>
   <% end %>
-  </li>	
-</ul>
+
+</div>
+<% end %>

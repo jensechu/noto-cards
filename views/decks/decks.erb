@@ -1,0 +1,20 @@
+<% @decks_list.each do |deck, cards| %>
+<div class='decks is-hidden'>
+  <%= deck %>
+
+  <% cards.each_with_index do |card, i| %>
+  <div class="card">
+
+    <div class='front'>
+      <%= card.front %>
+    </div>
+
+    <div class='back'>
+      <%= card.back %>
+    </div>
+
+  </div>
+  <% end %>
+
+</div>
+<% end %>

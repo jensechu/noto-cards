@@ -11,10 +11,22 @@ end
 
 get "/" do
   numDecks = Deck.all.length
-  @decks = Deck.take(numDecks)
+  allDecks = Deck.take(numDecks)
 
   numCards = Cards.all.length
-  @cards = Cards.take(numCards)
+  allCards = Cards.take(numCards)
+
+  @decks_list = Hash.new()
+
+  allDecks.each_with_index do |deck|
+    cards = Array.new
+    allCards.each do |card|
+      if card.decks_id == deck.id
+        cards.push(card)
+      end
+    end
+    @decks_list[deck] = cards
+  end
 
   erb :"decks/index"
 end

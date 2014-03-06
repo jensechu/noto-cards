@@ -1,11 +1,3 @@
-console.log('hi');
-
-function Card (front, back, deck) {
-    this.front = front;
-    this.back = back;
-    this.deck = deck;
-}
-
 $(document).ready(function(){
     function Card ($card) {
 	this.$card = $card;
@@ -23,8 +15,12 @@ $(document).ready(function(){
 	this.flipCard(this.$card, this.$front, this.$back);
     }
 
-    $('.card').each(function(){
-	$card = $(this);
-	new Card($card);
+    $('.card').each(function(){ new Card($(this)) });
+
+    $('.deck-selector').on('change', function(){
+	newDeck = $(this).val();
+	$('.current-deck').toggleClass('current-deck');
+	$('.deck[data-deck='+ newDeck +']').toggleClass('current-deck');
     });
+
 });
