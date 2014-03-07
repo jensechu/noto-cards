@@ -1,26 +1,29 @@
-<div id="header">
-  <select class="deck-selector">
-    <% @decks_list.each do |deck, cards| %>
-    <option><%= deck.name %></option>
-    <% end %>
-    <select>
+<% content_for :header do %>
+
+<% @decks_list.each do |deck, cards| %>
+<div class='deck-selector'>
+  <input type='checkbox' name='deck' value="<%= deck.name %>" /><%= deck.name %>
 </div>
+<% end %>
 
-<% @decks_list.each_with_index do |(deck, cards), i| %>
-<div class="deck <%= 'current-deck' if i == 0 %>" data-deck="<%= deck.name %>">
-  <% cards.each_with_index do |card, i| %>
-  <div class="card <%= 'current-card' if i == 0 %>">
+<% end %>
 
+<% content_for :content do %>
+<div id='current-decks'>
+  <% @decks_list.each_with_index do |(deck, cards), i| %>
+  <% cards.each_with_index do |card, z| %>
+  <div class="card <%= 'current-card' if (i == 0 and z == 0)  %>" data-deck="<%= deck.name %>">
+    
     <div class='front'>
       <%= card.front %>
     </div>
-
+    
     <div class='back is-hidden'>
       <%= card.back %>
     </div>
-
+    
   </div>
   <% end %>
-
+  <% end %>  
 </div>
-<% end %>
+  <% end %>  

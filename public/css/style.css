@@ -18,11 +18,20 @@ body {
     line-height: 40px;
 }
 
+.deck-selector {
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: rgb(241, 138, 204);
+    outline: none;
+}
+
 .card {
   display: none;
 }
 
-.current-deck .current-card {
+.current-card {
     display: block;
 }
 

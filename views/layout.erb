@@ -8,9 +8,10 @@
   </head>
   <body>
     <div id="header">
+      <%= yield_content :header %>
     </div>
 
-    <%= yield %>
+    <%= yield_content :content %>
 
     <script src="<%= url('/javascript/card-app.js') %>"></script>
   </body>

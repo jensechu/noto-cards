@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'sinatra/content_for'
 require './environments'
 
 class Deck < ActiveRecord::Base
@@ -25,7 +26,7 @@ get "/" do
         cards.push(card)
       end
     end
-    @decks_list[deck] = cards
+    @decks_list[deck] = cards.shuffle
   end
 
   erb :"decks/index"

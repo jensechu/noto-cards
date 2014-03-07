@@ -17,10 +17,36 @@ $(document).ready(function(){
 
     $('.card').each(function(){ new Card($(this)) });
 
+    // Choose any decks
     $('.deck-selector').on('change', function(){
-	newDeck = $(this).val();
-	$('.current-deck').toggleClass('current-deck');
-	$('.deck[data-deck='+ newDeck +']').toggleClass('current-deck');
+	$newDecks = $('#current-decks')
+
+	$('#current-decks').attr('class', '');
+	$('[name="deck"]:checked').each(function(){
+	    newDeck = $(this).attr('value');
+	    $newCards = $('.card[data-deck="' + newDeck + '"]');
+	    
+	    $newCards.addClass('current-deck');
+	    $('.current-card').removeClass('current-card');
+	    $('.current-deck:first-of-type').addClass('current-deck');
+	    $newDecks.addClass(newDeck);
+	});
+    });
+
+    // Go to the next card
+    $('#header').on('click', function(){
+	$currentCard = $('.current-card');
+	$firstCard = $('#current-decks .current-deck:first-of-type')
+	$nextCard = $('.current-deck.current-card').nextAll('.current-deck');
+
+	if ( $nextCard.length ) {
+	    $currentCard.removeClass('current-card');
+	    $nextCard.addClass('current-card');
+	} else {
+	    $currentCard.removeClass('current-card');
+	    $firstCard.addClass('current-card');
+	}
+
     });
 
 });
