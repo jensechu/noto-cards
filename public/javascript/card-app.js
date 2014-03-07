@@ -17,27 +17,32 @@ $(document).ready(function(){
 
     $('.card').each(function(){ new Card($(this)) });
 
+    // Check first deck on page load
+    currentDeck = $('.current-card').data('deck');
+    $('.deck-selector input[value="'+ currentDeck  +'"]').prop('checked', true);
+
     // Choose any decks
     $('.deck-selector').on('change', function(){
 	$newDecks = $('#current-decks')
 
-	$('#current-decks').attr('class', '');
+	$newDecks.attr('class', '');
+	$('.current-deck').removeClass('current-deck');
 	$('[name="deck"]:checked').each(function(){
 	    newDeck = $(this).attr('value');
 	    $newCards = $('.card[data-deck="' + newDeck + '"]');
 	    
 	    $newCards.addClass('current-deck');
 	    $('.current-card').removeClass('current-card');
-	    $('.current-deck:first-of-type').addClass('current-deck');
 	    $newDecks.addClass(newDeck);
 	});
+	$('.current-deck:first-of-type').addClass('current-deck');
     });
 
     // Go to the next card
     $('#header').on('click', function(){
 	$currentCard = $('.current-card');
-	$firstCard = $('#current-decks .current-deck:first-of-type')
-	$nextCard = $('.current-deck.current-card').nextAll('.current-deck');
+	$firstCard = $('#current-decks .current-deck').first();
+	$nextCard = $('.current-deck.current-card').nextAll('.current-deck').first();
 
 	if ( $nextCard.length ) {
 	    $currentCard.removeClass('current-card');

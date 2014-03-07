@@ -1,10 +1,10 @@
 <% content_for :header do %>
 
-<% @decks_list.each do |deck, cards| %>
 <div class='deck-selector'>
+<% @decks_list.each_with_index do |(deck, cards), i| %>
   <input type='checkbox' name='deck' value="<%= deck.name %>" /><%= deck.name %>
-</div>
 <% end %>
+</div>
 
 <% end %>
 
