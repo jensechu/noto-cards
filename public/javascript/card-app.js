@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     activeCards = [];
     currentCard = 0;
 
@@ -40,9 +39,9 @@ $(document).ready(function(){
 	activeCards = [];
 	for(i=0; i<newCards; i++) {
 	    activeCards.push(i);
-	}
-	shuffleCards();
-    };
+	    shuffleCards();
+	};
+    }
 
     // Shuffle cards in active decks
     function shuffleCards() {
@@ -60,10 +59,10 @@ $(document).ready(function(){
 	$('.current-card').removeClass('current-card');
 
 	if ( activeCards.length-1 > currentCard ) {
-	     currentCard = currentCard + 1;
-	 } else {
-	     currentCard = 0;
-	 }
+	    currentCard = currentCard + 1;
+	} else {
+	    currentCard = 0;
+	}
 	$($('.active-card')[currentCard]).addClass('current-card');	     
     };
 

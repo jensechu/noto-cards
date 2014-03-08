@@ -41,7 +41,7 @@ input[type=checkbox]:checked::after {
   -webkit-border-radius: 10px;
 }
 
-.deck-selector {
+#deckSelector {
     -webkit-appearance: none;
     background: none;
     border: none;
