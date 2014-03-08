@@ -14,21 +14,46 @@ body {
     padding: 5px 8px;
     border-bottom: 1px solid rgb(241, 138, 204);
     background-color: rgba(241, 138, 204, 0.2);
-    height: 35px;
     line-height: 40px;
+}
+
+input[type=checkbox] {
+  font-size: 10px;
+  position: relative;
+  border: 1px solid rgb(241, 138, 204);
+  line-height: 1em;
+  margin: 0 10px 0 0;
+  padding: 6px;
+  width: 1em;
+  height: 1em;
+  -webkit-appearance: none;
+  -webkit-border-radius: 10px;
+}
+
+input[type=checkbox]:checked::after {
+  position: absolute;
+  content: '';
+  left: 2px;
+  top: 2px;
+  height: 8px;
+  width: 8px;
+  background: rgb(241, 138, 204);
+  -webkit-border-radius: 10px;
 }
 
 .deck-selector {
     -webkit-appearance: none;
     background: none;
     border: none;
-    font-size: 25px;
     color: rgb(241, 138, 204);
     outline: none;
 }
 
 .card {
-  display: none;
+    display: none;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 30px;
 }
 
 .current-card {

@@ -1,4 +1,8 @@
+<% content_for :header do %>
 <h1>New Card</h1>
+<% end %>
+
+<% content_for :content do %>
 <form action="/new" method="post">
   <label for="front">Front:</label><br />
   <input id="front" name="cards[front]" type="text" value="<%= @card.front %>" />
@@ -23,3 +27,4 @@
   <%= @decks[@newCard.decks_id - 1].name %>
   <% end %>
 </form>   
+<% end %>
