@@ -15,9 +15,10 @@ body {
     border-bottom: 1px solid rgb(241, 138, 204);
     background-color: rgba(241, 138, 204, 0.2);
     line-height: 40px;
+    height: 35px;
 }
 
-input[type=checkbox] {
+#deckSelector input[type=checkbox] {
   font-size: 10px;
   position: relative;
   border: 1px solid rgb(241, 138, 204);
@@ -30,7 +31,7 @@ input[type=checkbox] {
   -webkit-border-radius: 10px;
 }
 
-input[type=checkbox]:checked::after {
+#deckSelector input[type=checkbox]:checked::after {
   position: absolute;
   content: '';
   left: 2px;
@@ -47,6 +48,13 @@ input[type=checkbox]:checked::after {
     border: none;
     color: rgb(241, 138, 204);
     outline: none;
+    float: left;
+}
+
+#nextCard {
+    font-size: 25px;
+    color: rgb(241, 138, 204);
+    float: right;
 }
 
 .card {

@@ -73,7 +73,7 @@ $(document).ready(function(){
 
     setup();
 
-    $('.next-card').on('click', function() {
+    $('#nextCard').on('click', function() {
 	nextCard();
     });
 
