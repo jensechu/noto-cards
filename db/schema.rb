@@ -20,8 +20,15 @@ ActiveRecord::Schema.define(version: 20140226190153) do
     t.datetime "updated_at"
   end
 
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "decks", force: true do |t|
     t.string   "name"
+    t.integer  "categories_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

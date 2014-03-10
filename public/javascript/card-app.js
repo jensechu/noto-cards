@@ -2,29 +2,17 @@ $(document).ready(function(){
     activeCards = [];
     currentCard = 0;
 
-    function Card ($card) {
-    	this.$card = $card;
-    	this.$front = $card.find('.front');
-    	this.$back = $card.find('.back');
-    	this.deck = $card.data('.deck');
-
-    	this.flipCard = function($card, $front, $back){
-    	    $card.on('click', function(){
-    		$front.toggleClass('is-hidden');
-    		$back.toggleClass('is-hidden');
-    	    });
-    	};
-
-    	this.flipCard(this.$card, this.$front, this.$back);
+    // Flip to reverse card side
+    function flipCard() {
+    	$('.current-card').find('.front').toggleClass('is-hidden');
+    	$('.current-card').find('.back').toggleClass('is-hidden');
     };
 
-    $('.card').each(function(){ new Card($(this)) });
-
-
     // Select additional decks
+    // TODO one must be selected
+    // TODO make function, extract event
     $deckSelect = $('#deckSelector input');
     $deckSelect.on('change', function(){
-	console.log('Selecting a new deck');
 	deck = $(this).val();
 	$deckCards = $('.card[data-deck='+ deck +']');
 	$deckCards.toggleClass('active-card');
@@ -34,8 +22,6 @@ $(document).ready(function(){
 
     // Add new deck's cards
     function addNewCards(newCards) {
-	// ONE MUST BE SELECTED
-	console.log('Update active cards');
 	activeCards = [];
 	for(i=0; i<newCards; i++) {
 	    activeCards.push(i);
@@ -45,7 +31,6 @@ $(document).ready(function(){
 
     // Shuffle cards in active decks
     function shuffleCards() {
-	console.log('shuffling active cards');
 	var ac = activeCards;
 	for(var j, x, i = ac.length; i; j = Math.floor(Math.random() * i), x = ac[--i], ac[i] = ac[j], ac[j] = x);
 	activeCards = ac;
@@ -55,7 +40,6 @@ $(document).ready(function(){
 
     // Move to next active card
     function nextCard() {
-	console.log('move on to next card');
 	$('.current-card').removeClass('current-card');
 
 	if ( activeCards.length-1 > currentCard ) {
@@ -63,18 +47,30 @@ $(document).ready(function(){
 	} else {
 	    currentCard = 0;
 	}
-	$($('.active-card')[currentCard]).addClass('current-card');	     
+	$($('.active-card')[activeCards[currentCard]]).addClass('current-card');	     
     };
+
+    // Reverse default card side
+    function reverseSide() {
+	$fronts = $('.card').find('.front');
+	$backs = $('.card').find('.back');
+
+    	$fronts.toggleClass('is-hidden');
+    	$backs.toggleClass('is-hidden');
+    }
 
     // Setup
     function setup() {
 	$('#deckSelector input').first().click();
+
+	$('#reverseCards').on('click', function() { reverseSide() });
+
+	$('#nextCard').on('click', function() { nextCard() });
+
+	$('.current-card').on('click', function() { flipCard() });
+
     };
 
     setup();
-
-    $('#nextCard').on('click', function() {
-	nextCard();
-    });
 
 });

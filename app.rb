@@ -3,6 +3,10 @@ require 'sinatra/activerecord'
 require 'sinatra/content_for'
 require './environments'
 
+class Category < ActiveRecord::Base
+  has_many :decks, dependent: :destroy
+end
+
 class Deck < ActiveRecord::Base
   has_many :cards, dependent: :destroy
 end
@@ -17,7 +21,7 @@ get "/" do
   numCards = Cards.all.length
   allCards = Cards.take(numCards)
 
-  @decks_list = Hash.new()
+  @categories_list = Hash.new()
 
   allDecks.each_with_index do |deck|
     cards = Array.new
