@@ -15,6 +15,9 @@ class Cards < ActiveRecord::Base
 end
 
 get "/" do
+  numCategories = Category.all.length
+  allCategories = Category.take(numCategories)
+
   numDecks = Deck.all.length
   allDecks = Deck.take(numDecks)
 
@@ -23,14 +26,18 @@ get "/" do
 
   @categories_list = Hash.new()
 
-  allDecks.each_with_index do |deck|
-    cards = Array.new
-    allCards.each do |card|
-      if card.decks_id == deck.id
-        cards.push(card)
+  allCategories.each_with_index do |category|
+    allDecks.each_with_index do |deck|
+      decks = Hash.new()
+      cards = Array.new
+      allCards.each do |card|
+        if card.decks_id == deck.id
+          cards.push(card)
+        end
       end
+      decks[deck.name] = cards.shuffle
+      @categories_list[category] = decks
     end
-    @decks_list[deck] = cards.shuffle
   end
 
   erb :"decks/index"
