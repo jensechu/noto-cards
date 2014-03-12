@@ -16,29 +16,13 @@ end
 
 get "/" do
   numCategories = Category.all.length
-  allCategories = Category.take(numCategories)
+  @categories = Category.take(numCategories)
 
   numDecks = Deck.all.length
-  allDecks = Deck.take(numDecks)
+  @decks = Deck.take(numDecks)
 
   numCards = Cards.all.length
-  allCards = Cards.take(numCards)
-
-  @categories_list = Hash.new()
-
-  allCategories.each_with_index do |category|
-    allDecks.each_with_index do |deck|
-      decks = Hash.new()
-      cards = Array.new
-      allCards.each do |card|
-        if card.decks_id == deck.id
-          cards.push(card)
-        end
-      end
-      decks[deck.name] = cards.shuffle
-      @categories_list[category] = decks
-    end
-  end
+  @cards = Cards.take(numCards)
 
   erb :"decks/index"
 end
@@ -47,7 +31,8 @@ get "/new" do
   numDecks = Deck.all.length
   @decks = Deck.take(numDecks)
 
-  @card = Cards.new
+  @card = Cards.newtus
+
   erb :"decks/new"
 end
 

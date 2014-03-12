@@ -14,7 +14,8 @@ $(document).ready(function(){
     $deckSelect = $('#deckSelector input');
     $deckSelect.on('change', function(){
 	deck = $(this).val();
-	$deckCards = $('.card[data-deck='+ deck +']');
+	$deckCards = $('.card[data-deck="'+ deck +'"]');
+	console.log($deckCards);
 	$deckCards.toggleClass('active-card');
 	
 	addNewCards($('.active-card').length);

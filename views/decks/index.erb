@@ -1,25 +1,32 @@
 
 <% content_for :header do %>
 
-<div id='deckSelector'>
-  <% @categories_list.each_with_index do |(deck, cards), i| %>
-  <input type='checkbox' name='deck' value="<%= deck.name %>" /><%= deck.name %>
-  <% end %>
-</div>
+  <div id='deckSelector'>
+    <% @categories.each do |category| %>
+      <input type='checkbox' name='deck' value="<%= category.id %>" /><%= category.name %>
+    <% end %>
+  </div>
 
-<div id="nextCard">
-  &hearts;
-</div>
-<div id="reverseCards">
-  &#8644;
-</div>
+  <div id="nextCard">
+    &hearts;
+  </div>
+  <div id="reverseCards">
+    &#8644;
+  </div>
 
 <% end %>
 
 <% content_for :content do %>
 
-<% @categories_list.each_with_index do |(category, deck), i| %>
-<%= deck %>
-<% end %>  
+  <% @cards.each_with_index do |card,i| %>
+  <div class="card" data-deck="<%= card.decks_id %>">
+    <div class="front">
+      <%= card.front %>
+    </div>
+    <div class="back is-hidden">
+      <%= card.back %>
+    </div>
+  </div>
+  <% end %>
 
 <% end %>
