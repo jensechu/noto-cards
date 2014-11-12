@@ -1,12 +1,12 @@
 {"cards": [
-    {"english": "I want to eat sushi at eight o'clock.", 
-     "japanese": "はちじに　すしを　たべたい。"
+    {"front": "I want to eat sushi at eight o'clock.",
+     "back": "はちじに　すしを　たべたい。"
     },
-    {"english": "I will go to work by bike.", 
-     "japanese": "わたしは　じてんしゃで　しごとに　いきます。"
+    {"front": "I will go to work by bike.",
+     "back": "わたしは　じてんしゃで　しごとに　いきます。"
     },
-    {"english": "I will go to the market now.", 
-     "japanese": "わたしは　いま　マーケットに　いきます。"
+    {"front": "I will go to the market now.",
+     "back": "わたしは　いま　マーケットに　いきます。"
     }
 ]
 }

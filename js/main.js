@@ -1,59 +1,76 @@
-$(document).ready(function(){
+window.Noto = {
 
-    play = true;
+  CARD_TEMPLATE:  $("#cardTemplate").html().trim(),
+  $cardContainer: $("#container"),
 
-    function loadCards() {
-        $.getJSON('/js/cards.json', function(data) {
-            var items = [];
-            $.each( data.cards, function( i, val ) {
-                items.push( 
-                    "<div class='card is-hidden'><h1>" + data.cards[i].japanese + "</h1> <h1 class='english is-hidden'>" + data.cards[i].english + "</h1></div>" );
-            });
-            templateItems = items.join( "" )
-            $(templateItems).appendTo( "#container" );
-            
-        })
-	.done(function() { 	    
-	    setInterval( function(){
-		if( play ) { 
-		    displayRandomCard()
-		}
-	    }, 1000);
-	    showTranslation();
-	    pauseDisplay();
-	    newCard();
-	})
-        return false;
-    }
+  _loadCards: function() {
+    $.getJSON('js/cards.json', function(data) {
+      Noto._appendCards(data.cards);
+    }).done(function(){
+      Noto.handleSelectRandomCard();
+      Noto.handleFlipCard();
+    });
 
-    function showTranslation() {
-	$('.card').on('click', function(){
-	    $(this).find('.english').toggleClass('is-hidden');
-	});
-    }
+    return false;
+  },
 
-    function pauseDisplay() {
-	$('.pause').on('click', function(){
-	    play = !(play);
-	    $(this).toggleClass('paused');
-	});
-    }
+  _buildCard: function(card) {
+    $currentCard = Noto.$cardContainer.find('.card').last();
+    $front       = $currentCard.find('.front');
+    $back        = $currentCard.find('.back');
 
-    function displayRandomCard(){
-	cards = $('.card');
-	english = $('.card .english');
-	displayCard = Math.floor( Math.random() * cards.length )
+    $front.text(card.front);
+    $back.text(card.back);
+  },
 
-	$(cards).addClass('is-hidden');
-	$(english).addClass('is-hidden');
-	$(cards[displayCard]).removeClass('is-hidden');
-    }
+  _appendCards: function(cards) {
+    $.each(cards, function() {
+      var card = this;
 
-    function newCard(){
-	$('.toggle').on('click', function(){
-	    displayRandomCard();
-	});
-    }
+      Noto.$cardContainer.append(Noto.CARD_TEMPLATE);
+      Noto._buildCard(card);
+    });
 
-    loadCards();
-});
+  },
+
+  handleFlipCard: function() {
+    $('.card').on('click', function() {
+      Noto._flipCard();
+    });
+  },
+
+  _flipCard: function() {
+    var $sides = $('.selected').find('.side');
+
+    $sides.toggleClass('active');
+  },
+
+  handleSelectRandomCard: function() {
+    $('.toggle').on('click', function() {
+      Noto._resetCard();
+      Noto._selectRandomCard();
+    });
+  },
+
+  _resetCard: function() {
+    var $selectedCard = $('.selected');
+    var $sides = $selectedCard.find('.side');
+
+    console.log('lol');
+
+    $sides.removeClass('active');
+    $selectedCard.find('.front').addClass('active');
+  },
+
+  _selectRandomCard: function() {
+    var $activeCards = Noto.$cardContainer.find('.card');
+    var randomNumber = Math.floor( Math.random() * $activeCards.length);
+    var $selectedCard = $($activeCards[randomNumber]);
+
+    $('.selected').removeClass('selected');
+
+    $selectedCard.addClass('selected');
+  }
+};
+
+window.Noto._loadCards();

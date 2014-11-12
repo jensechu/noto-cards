@@ -49,6 +49,7 @@ body {
   text-align: center;
   box-sizing: border-box;
   padding: 0 10px;
+  display: none;
 }
 
 .card h1 {
@@ -57,6 +58,14 @@ body {
     font-size: 25px;
 }
 
-.is-hidden {
+.side {
   display: none;
+}
+
+.side.active {
+  display: block;
+}
+
+.selected {
+  display: block;
 }
