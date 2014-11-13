@@ -56,8 +56,6 @@ window.Noto = {
     var $selectedCard = $('.selected');
     var $sides = $selectedCard.find('.side');
 
-    console.log('lol');
-
     $sides.removeClass('active');
     $selectedCard.find('.front').addClass('active');
   },

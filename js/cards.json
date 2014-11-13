@@ -1,12 +1,71 @@
 {"cards": [
     {"front": "I want to eat sushi at eight o'clock.",
-     "back": "はちじに　すしを　たべたい。"
+     "back": "はちじに　すしを　たべたい。",
+     "type": "sentence"
     },
     {"front": "I will go to work by bike.",
-     "back": "わたしは　じてんしゃで　しごとに　いきます。"
+     "back": "わたしは　じてんしゃで　しごとに　いきます。",
+     "type": "sentence"
     },
     {"front": "I will go to the market now.",
-     "back": "わたしは　いま　マーケットに　いきます。"
+     "back": "わたしは　いま　マーケットに　いきます。",
+     "type": "sentence"
+    },
+    {"front": "This is a peach.",
+     "back": "これは ももです。",
+     "type": "sentence"
+    },
+    {"front": "This is not a peach.",
+     "back": "これは ももでは ありません。",
+     "type": "sentence"
+    },
+    {"front": "This is my book.",
+     "back": "これはわたしの　ほんです。",
+     "type": "sentence"
+    },
+    {"front": "I will go to Tokyo.",
+     "back": "わたしは　とうきょうへ　いきます。",
+     "type": "sentence"
+    },
+    {"front": "I bought a car.",
+     "back": "わたしは　くるまを　かいました。",
+     "type": "sentence"
+    },
+    {"front": "This is easy.",
+     "back": "これは　やすいです。",
+     "type": "sentence"
+    },
+    {"front": "This is tough.",
+     "back": "これは　じょうぶです。",
+     "type": "sentence"
+    },
+    {"front": "How much is this?",
+     "back": "これは　いくらですか。",
+     "type": "sentence"
+    },
+    {"front": "What is good?",
+     "back": "なにが　いいですか。",
+     "type": "sentence"
+    },
+    {"front": "I am writing a letter now.",
+     "back": "いま　てがみを　かいています。",
+     "type": "sentence"
+    },
+    {"front": "I want to eat tempura.",
+     "back": "てんぷらが　たべたいです。",
+     "type": "sentence"
+    },
+    {"front": "I wanted to eat tempura.",
+     "back": "てんぷらを　たべたがっていました。",
+     "type": "sentence"
+    },
+    {"front": "Please do not forget.",
+     "back": "わすれないで　ください。",
+     "type": "sentence"
+    },
+    {"front": "What do you do?",
+     "back": "あなたな　らどうしますか。",
+     "type": "sentence"
     }
-]
+  ]
 }
